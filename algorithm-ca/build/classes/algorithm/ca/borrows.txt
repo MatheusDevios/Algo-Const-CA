@@ -1,0 +1,4 @@
+studentID, bookTitle, date
+1, Kiss the Bride, 07/11/2020 15:48:37
+2, Cinderela, 07/11/2020 16:18:38
+5, Deception, 07/11/2020 16:19:21
