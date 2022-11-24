@@ -90,5 +90,20 @@ public class Searching {
         }
         return "";
     }
+    public void queueSearchStudentBorrowList(List<Borrows> array, String studentID) {
+        String result = "";
+        for(Borrows studentBorrowed : array){
+            if (studentBorrowed.getStudentID().equalsIgnoreCase(studentID)) {
+//              System.out.println(studentBorrowed.toString());
+                result += studentBorrowed.toString()+"\n";
+            }
+        }
+        if (result.length()>1) {
+            System.out.println(result);
+        } else {
+            System.out.println("\nThis Student has not borrowed any book yet.");
+        }
+    }
+    
     
 }

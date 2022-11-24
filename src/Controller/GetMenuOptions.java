@@ -212,20 +212,9 @@ public class GetMenuOptions {
                     break;   
                 case 7:
                     // List all books borrowed book from student ID
-                    String result = "";
                     System.out.println("StudentID: ");
                     String studentID = scanner.nextLine();
-                    for(Borrows studentBorrowed : borrowList){
-                        if (studentBorrowed.getStudentID().equalsIgnoreCase(studentID)) {
-//                            System.out.println(studentBorrowed.toString());
-                            result += studentBorrowed.toString()+"\n";
-                        }
-                    }
-                    if (result.length()>1) {
-                        System.out.println(result);
-                    } else {
-                        System.out.println("\nThis Student has not borrowed any book yet.");
-                    }
+                    search.queueSearchStudentBorrowList(borrowList, studentID);
                     break;   
                 case 8:
                     //Close the menu and shows a message to the user saying that they chose to finish it.
