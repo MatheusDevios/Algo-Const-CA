@@ -57,7 +57,7 @@ public class Books {
 
     @Override
     public String toString() {
-        return "# BOOK # ID: " + getId() + ", Title: " + getBookTitle() + ", Author: " + getAuthorFirstName() + " " + getAuthorLastName() + ", Genre: " + getGenre() + "\n";
+        return "# BOOK # ID: " + getId() + ", Title: " + getBookTitle() + ",\tAuthor: " + getAuthorFirstName() + " " + getAuthorLastName() + ",\tGenre: " + getGenre() + "\n";
     }
 
 }

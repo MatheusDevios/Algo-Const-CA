@@ -25,20 +25,20 @@ public class Menu {
                 + "Option 8 = Exit.\n");
     }
     public void getMenuBooksSearch() {
-        System.out.println("Option 1 = Search for a book by Author.\n"
-                + "Option 2 = Search for a book by Title.\n");
+        System.out.println("Option 1 = Search for a book by Title.\n"
+                + "Option 2 = Search for a book by Author.\n");
     }
     public void getMenuStudentSearch() {
         System.out.println("Option 1 = Search for a student by name.\n"
                 + "Option 2 = Search for a student by ID.\n");
     }
     public void getMenuBooksList() {
-        System.out.println("Option 1 = Search for a student by title.\n"
-                + "Option 2 = Search for a student by Author.\n");
+        System.out.println("Option 1 = List for a student by title.\n"
+                + "Option 2 = List for a student by Author.\n");
     }
     public void getMenuStudentList() {
-        System.out.println("Option 1 = Search for a student by Name.\n"
-                + "Option 2 = Search for a student by ID.\n");
+        System.out.println("Option 1 = List for a student by Name.\n"
+                + "Option 2 = List for a student by ID.\n");
     }
     
 }

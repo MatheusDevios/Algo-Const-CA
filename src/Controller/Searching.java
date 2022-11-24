@@ -30,10 +30,10 @@ public class Searching {
 		int mid = (left+right) / 2; //2
                 switch(option){
                     case 1:
-                        result = array.get(mid).getAuthorFirstName() + " " + array.get(mid).getAuthorLastName();
+                        result = array.get(mid).getAuthorFirstName().toLowerCase() + " " + array.get(mid).getAuthorLastName().toLowerCase();
                         break;
                     case 2:
-                        result = array.get(mid).getBookTitle();
+                        result = array.get(mid).getBookTitle().toLowerCase();
                         break;
                 }
 
@@ -59,7 +59,7 @@ public class Searching {
 		int mid = (left+right) / 2; //2
                 switch(option){
                     case 1:
-                        result = array.get(mid).getFirstName() + " " + array.get(mid).getLastName();
+                        result = array.get(mid).getFirstName().toLowerCase() + " " + array.get(mid).getLastName().toLowerCase();
                         break;
                     case 2:
                         result = array.get(mid).getStudentID()+"";

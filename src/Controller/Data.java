@@ -33,7 +33,7 @@ public class Data {
         }catch(IOException e){
             System.out.println("Error!");
         }
-        System.out.println("Book returned!");
+        System.out.println("\nBook returned!");
     }
     
     public  void borrowBook(String[] borrows) throws IOException{
@@ -44,7 +44,7 @@ public class Data {
         }catch(IOException e){
             System.out.println("Error!");
         }
-        System.out.println("Book borrowed!");
+        System.out.println("\nBook borrowed!");
     }
     
     public  void bookQueue(String[] borrows) throws IOException{
@@ -55,7 +55,7 @@ public class Data {
         }catch(IOException e){
             System.out.println("Error!");
         }
-        System.out.println("You were added to the waiting list!");
+        System.out.println("\nYou were added to the waiting list!");
     }
     
     public List<Books> loadBooks() throws FileNotFoundException {

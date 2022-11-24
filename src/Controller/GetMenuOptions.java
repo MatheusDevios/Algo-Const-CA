@@ -57,7 +57,7 @@ public class GetMenuOptions {
                             List<Books> sortedBooks2 = sorting.mergeSortBook(books, 2);
                             System.out.println("Please type the book title: ");
                             String bookTitle = scanner.nextLine();
-                            Books resultBook2 = search.binarySearchBooks(sortedBooks2, bookTitle, 2);
+                            Books resultBook2 = search.binarySearchBooks(sortedBooks2, bookTitle.toLowerCase(), 2);
                             if (resultBook2 != null) {
                                 System.out.println(resultBook2.toString());
                             } else {
@@ -69,7 +69,7 @@ public class GetMenuOptions {
                             List<Books> sortedBooks = sorting.mergeSortBook(books, 1);
                             System.out.println("Author Full Name: ");
                             String authorFullName = scanner.nextLine();
-                            Books resultBook = search.binarySearchBooks(sortedBooks, authorFullName, 1);
+                            Books resultBook = search.binarySearchBooks(sortedBooks, authorFullName.toLowerCase(), 1);
                             if (resultBook != null) {
                                 System.out.println(resultBook.toString());
                             } else {
@@ -106,8 +106,8 @@ public class GetMenuOptions {
                             //search book by name
                             List<Students> sortedStudentsN = sorting.mergeSortStudent(student, 1);
                             System.out.println("Student Full Name: ");
-                            String authorFullName = scanner.nextLine();
-                            Students resultStudentN = search.binarySearchStudent(sortedStudentsN, authorFullName, 1);
+                            String studentFullName = scanner.nextLine();
+                            Students resultStudentN = search.binarySearchStudent(sortedStudentsN, studentFullName.toLowerCase(), 1);
                             if (resultStudentN != null) {
                                 System.out.println(resultStudentN.toString());
                             } else {
@@ -157,12 +157,12 @@ public class GetMenuOptions {
                     DateTimeFormatter borrowedDTF = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
                     LocalDateTime borrowedLDT = LocalDateTime.now();
                     String dateBorrowed = borrowedDTF.format(borrowedLDT);
-                    String [] bookData = {studentIdBorrow,bookNameBorrowed,dateBorrowed};
+                    String[] bookData = {studentIdBorrow,bookNameBorrowed,dateBorrowed};
                    
                     //queue
                     String bookSearched = search.queueSearchBorrow(borrowList, bookNameBorrowed);
-                    if (bookSearched.contains(bookNameBorrowed)){
-                        System.out.println("This book is borrowed, let me add you on the waiting list.");
+                    if (bookSearched.toLowerCase().contains(bookNameBorrowed.toLowerCase())){
+                        System.out.println("\nThis book is borrowed, let me add you on the waiting list.");
                         System.out.println("Option 1 = Yes.\n"
                                            + "Option 2 = No.\n");
                         int queueOption = input.getUserIntValue("Select the number corresponding to your intention.", 1, 2);
@@ -170,6 +170,7 @@ public class GetMenuOptions {
                         switch(queueOption){
                             case 1:
                                 data.bookQueue(bookData);
+                                queue = data.loadQueue();
                                 break;
                             case 2: 
                                 System.out.println("\nYou have decided not to save your request to the waiting list.");
@@ -178,6 +179,7 @@ public class GetMenuOptions {
                         
                     } else{
                         data.borrowBook(bookData);
+                        borrowList = data.loadBorrows();
                     }
                     break;   
                 case 6:
@@ -191,11 +193,12 @@ public class GetMenuOptions {
                     String dateReturned = returnedDTF.format(returnedLDT);
                     String [] book = {studentIdReturned,bookNameReturned,dateReturned};
                     data.returnBook(book);
+                    returnList = data.loadReturns(); //****
                     // do the queue ****
                     String bookSearchedReturned = search.queueSearchReturn(queue, bookNameReturned);
                     String resultId[]= bookSearchedReturned.split(",");
                     //splt in order to get the studentID
-                    if (bookSearchedReturned.contains(bookNameReturned)){
+                    if (bookSearchedReturned.toLowerCase().contains(bookNameReturned.toLowerCase())){
                         List<Students> sortedStudentsID = sorting.mergeSortStudent(student, 2);
                         Students studentResult = search.binarySearchStudent(sortedStudentsID, resultId[0], 2);
                         if (studentResult!=null) {
@@ -215,7 +218,7 @@ public class GetMenuOptions {
                     for(Borrows studentBorrowed : borrowList){
                         if (studentBorrowed.getStudentID().equalsIgnoreCase(studentID)) {
 //                            System.out.println(studentBorrowed.toString());
-                            result += studentBorrowed.toString();
+                            result += studentBorrowed.toString()+"\n";
                         }
                     }
                     if (result.length()>1) {
