@@ -66,6 +66,7 @@ public class GetUserInput {
                 userInput = Integer.parseInt(myKB.nextLine());
                 //check that the value is allowed by checking range
                 if ( (userInput < minValue) || ( userInput > maxValue) ){
+                System.out.println("Error -- the system didn't find what you typed!");
                 menu.getMenu();
                 }
                 else {
