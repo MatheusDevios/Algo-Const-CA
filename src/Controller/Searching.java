@@ -84,9 +84,12 @@ public class Searching {
         }
         return "";
     }
-    public String queueSearchReturn(List<Queue> array, String target) {
-        for (Queue item : array) {
-            if (item.getBookTitle().equalsIgnoreCase(target)) return item.toString();
+    public String queueSearchReturn(MyOwnQueue array, String target) {
+        int size = array.size();
+        for (int i = 0; i<size; i++) {
+//            if (item.getBookTitle().equalsIgnoreCase(target)) return item.toString();
+            if (array.First().getBookTitle().equalsIgnoreCase(target)) return array.First().toString();
+            array.Dequeue();
         }
         return "";
     }

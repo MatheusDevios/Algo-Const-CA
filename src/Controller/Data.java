@@ -94,8 +94,9 @@ public class Data {
         }
         return objectList;
     }
-    public ArrayList<Queue> loadQueue() throws FileNotFoundException {
-        ArrayList<Queue> objectList = new ArrayList<Queue>();
+    public MyOwnQueue loadQueue() throws FileNotFoundException {
+        MyOwnQueue objectList = new MyOwnQueue();
+//        ArrayList<Queue> objectList = new ArrayList<Queue>();
         FileInputStream bookDataFile = new FileInputStream("queueList.txt");
         String line;
 
@@ -103,7 +104,7 @@ public class Data {
             line = breader.readLine();
             while (line != null) {
                 String[] parts = line.split(",");
-                objectList.add(new Queue(parts[0], parts[1], parts[2]));
+                objectList.Enqueue(new Queue(parts[0], parts[1], parts[2]));
                 line = breader.readLine();
             }
 

@@ -33,9 +33,9 @@ public class GetMenuOptions {
         GetUserInput input = new GetUserInput();
         Searching search = new Searching();
         Sorting sorting = new Sorting();
+        MyOwnQueue queue = data.loadQueue();
         List<Books> books = data.loadBooks();
         List<Students> student = data.loadStudents();
-        List<Queue> queue = data.loadQueue();
         List<Returns> returnList = data.loadReturns();
         List<Borrows> borrowList = data.loadBorrows();
         int optionChosen;
@@ -194,9 +194,10 @@ public class GetMenuOptions {
                     String [] book = {studentIdReturned,bookNameReturned,dateReturned};
                     data.returnBook(book);
                     returnList = data.loadReturns(); //****
-                    // do the queue ****
+                    // create the queue ****
                     String bookSearchedReturned = search.queueSearchReturn(queue, bookNameReturned);
                     String resultId[]= bookSearchedReturned.split(",");
+                    System.out.println(bookSearchedReturned);
                     //splt in order to get the studentID
                     if (bookSearchedReturned.toLowerCase().contains(bookNameReturned.toLowerCase())){
                         List<Students> sortedStudentsID = sorting.mergeSortStudent(student, 2);
