@@ -51,16 +51,17 @@ public class Searching {
     /*
      * Binary search for Student.
      * We will pass an List of object Student, a target and the option from the switch case.
-     * 1. for 
+     * 1. for title and 2. for author's name
      */
     public Students binarySearchStudent(List<Students> array, String target, int option){
         
 	if (array.size() == 0) return null;
 	
-	int left = 0;
-	int right = array.size() - 1;
-        String result = "";
+	int left = 0; //left pointer
+	int right = array.size() - 1; //right pointer
+        String result = ""; //result
 
+        //Condition
 	while (left <=right) {
 		int mid = (left+right) / 2; //2
                 switch(option){
@@ -91,6 +92,7 @@ public class Searching {
         return "";
     }
     public String queueSearchReturn(List<Queue> array, String target) {
+       
         for (Queue item : array) {
             if (item.getBookTitle().equalsIgnoreCase(target)) return item.toString();
         }

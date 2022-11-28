@@ -50,6 +50,7 @@ public class GetMenuOptions {
             switch (optionChosen) {
                 case 1:
                     menu.getMenuBooksSearch();
+                    System.out.println("You choosed to search a book!");
                     int bookCategory = input
                             .getUserIntValue("Select the number corresponding to the search you want to see.", 1, 2);
                     switch (bookCategory) {
@@ -80,6 +81,7 @@ public class GetMenuOptions {
                     }
                     break;
                 case 2:
+                System.out.println("You choosed to list all the books!");
                     menu.getMenuBooksList();
                     int listBookByCategory = input
                             .getUserIntValue("Select the number corresponding to the list you want to see.", 1, 2);
@@ -101,6 +103,7 @@ public class GetMenuOptions {
                     }
                     break;
                 case 3:
+                System.out.println("You choosed to search a student!");
                     menu.getMenuStudentSearch();
                     int studentCategory = input
                             .getUserIntValue("Select the number corresponding to the search you want to see.", 1, 2);
@@ -134,6 +137,7 @@ public class GetMenuOptions {
                     }
                     break;
                 case 4:
+                System.out.println("You choosed to list all students!");
                     menu.getMenuStudentList();
                     int listStudentByCategory = input
                             .getUserIntValue("Select the number corresponding to the list you want to see.", 1, 2);
@@ -157,6 +161,7 @@ public class GetMenuOptions {
                     }
                     break;
                 case 5:
+                System.out.println("You choosed to borrow a book!");
                     // Register borrowed book
                     System.out.println("StudentID: ");
                     String studentIdBorrow = scanner.nextLine();
@@ -196,6 +201,7 @@ public class GetMenuOptions {
                     }
                     break;
                 case 6:
+                System.out.println("You choosed to return a book!");
                     // Register return book ****
                     System.out.println("StudentID: ");
                     String studentIdReturned = scanner.nextLine();
@@ -225,6 +231,7 @@ public class GetMenuOptions {
                     }
                     break;
                 case 7:
+                System.out.println("You choosed to list all books borrowed by a student!");
                     // List all books borrowed book from student ID
                     System.out.println("StudentID: ");
                     String studentID = scanner.nextLine();

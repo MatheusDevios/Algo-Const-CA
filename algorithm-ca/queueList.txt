@@ -9,3 +9,7 @@ studentID,bookTitle,date
 709fys930,Cinderella,23/11/2022 15:20:27
 724kaq806,Possession,24/11/2022 14:10:26
 488rfs403,Possession,24/11/2022 14:38:30
+602jsj762,Cinderella,25/11/2022 22:10:30
+840axq783,Freddy Got Fingered,26/11/2022 09:46:45
+540ftv545,test,26/11/2022 13:35:57
+590a1022,Freddy Got Fingered ,26/11/2022 20:51:06
