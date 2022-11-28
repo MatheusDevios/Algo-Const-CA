@@ -57,7 +57,10 @@ public class Books {
 
     @Override
     public String toString() {
-        return "# BOOK # ID: " + getId() + ", Title: " + getBookTitle() + ",\tAuthor: " + getAuthorFirstName() + " " + getAuthorLastName() + ",\tGenre: " + getGenre() + "\n";
+        return "\nBookID: " + getId() + ", Title: " + getBookTitle() + ",\tAuthor: " + getAuthorFirstName() + " " + getAuthorLastName() + ",\tGenre: " + getGenre();
     }
-
+    
+    public String toStringUnic() {
+        return "\nBookID: " + getId() + "\nTitle: " + getBookTitle() + "\nAuthor: " + getAuthorFirstName() + " " + getAuthorLastName() + "\nGenre: " + getGenre();
+    }
 }

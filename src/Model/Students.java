@@ -52,6 +52,10 @@ public class Students {
 
     @Override
     public String toString() {
-        return "studentID: " + studentID + ",\t Name: " + firstName + " " + lastName + ",\t email: " + email + ",\t gender: " + gender + ",\t adress: " + adress;
+        return "StudentID: " + studentID + ",\t Name: " + firstName + " " + lastName + ",\t email: " + email + ",\t gender: " + gender + ",\t adress: " + adress;
+    }
+    
+    public String toStringUnic() {
+        return "\nStudentID: " + studentID + "\nName: " + firstName + " " + lastName + "\nemail: " + email + "\ngender: " + gender + "\nadress: " + adress;
     }
 }

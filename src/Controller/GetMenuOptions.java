@@ -49,6 +49,7 @@ public class GetMenuOptions {
              //in each case the user chooses an option, it does the respective one
             switch(optionChosen){
                 case 1:
+                    System.out.println("\nYou have choosen to search a book!");
                     menu.getMenuBooksSearch();
                     int bookCategory = input.getUserIntValue("Select the number corresponding to the search you want to see.", 1, 2);
                     switch(bookCategory) {
@@ -59,9 +60,9 @@ public class GetMenuOptions {
                             String bookTitle = scanner.nextLine();
                             Books resultBook2 = search.binarySearchBooks(sortedBooks2, bookTitle.toLowerCase(), 2);
                             if (resultBook2 != null) {
-                                System.out.println(resultBook2.toString());
+                                System.out.println(resultBook2.toStringUnic());
                             } else {
-                                System.out.println("Sorry, we do not have this Book.");
+                                System.out.println("\nSorry, we do not have this Book.");
                             }
                             break;
                         case 2:
@@ -71,14 +72,15 @@ public class GetMenuOptions {
                             String authorFullName = scanner.nextLine();
                             Books resultBook = search.binarySearchBooks(sortedBooks, authorFullName.toLowerCase(), 1);
                             if (resultBook != null) {
-                                System.out.println(resultBook.toString());
+                                System.out.println(resultBook.toStringUnic());
                             } else {
-                                System.out.println("Sorry, we do not have a Book with this author name.");
+                                System.out.println("\nSorry, we do not have a Book with this author name.");
                             }
                             break;
                     }
                     break;
                 case 2:
+                    System.out.println("\nYou have choosen to list all the books!");
                     menu.getMenuBooksList();
                     int listBookByCategory = input.getUserIntValue("Select the number corresponding to the list you want to see.", 1, 2);
                     switch(listBookByCategory) {
@@ -86,19 +88,22 @@ public class GetMenuOptions {
                             //list book by title
                             List<Books> sortedBooksT = sorting.mergeSortBook(books, 2);
                             for (Books book : sortedBooksT){
-                                System.out.println(book.toString());
+                                System.out.print(book.toString());
                             }
+                            System.out.println();
                             break;
                         case 2:
                             //list book by Author
                             List<Books> sortedBooksA = sorting.mergeSortBook(books, 1);
                             for (Books book : sortedBooksA){
-                                System.out.println(book.toString());
+                                System.out.print(book.toString());
                             }
+                            System.out.println();
                             break;
                     }
                     break;
                 case 3:
+                    System.out.println("\nYou have choosen to search a student!");
                     menu.getMenuStudentSearch();
                     int studentCategory = input.getUserIntValue("Select the number corresponding to the search you want to see.", 1, 2);
                     switch(studentCategory) {
@@ -109,9 +114,9 @@ public class GetMenuOptions {
                             String studentFullName = scanner.nextLine();
                             Students resultStudentN = search.binarySearchStudent(sortedStudentsN, studentFullName.toLowerCase(), 1);
                             if (resultStudentN != null) {
-                                System.out.println(resultStudentN.toString());
+                                System.out.println(resultStudentN.toStringUnic());
                             } else {
-                                System.out.println("Sorry, we do not have a Student with this name, please make sure you type the student full name.");
+                                System.out.println("\nSorry, we do not have a Student with this name, please make sure you type the student full name.");
                             }
                             break;
                         case 2:
@@ -121,14 +126,15 @@ public class GetMenuOptions {
                             String studentID = scanner.nextLine();
                             Students resultStudentID = search.binarySearchStudent(sortedStudentsID, studentID, 2);
                             if (resultStudentID != null) {
-                                System.out.println(resultStudentID.toString());
+                                System.out.println(resultStudentID.toStringUnic());
                             } else {
-                                System.out.println("Sorry, we do not have this Book.");
+                                System.out.println("\nSorry, we do not have this Book.");
                             }
                             break;
                     }
                     break;
                 case 4:
+                    System.out.println("\nYou have choosen to list all students!");
                     menu.getMenuStudentList();
                     int listStudentByCategory = input.getUserIntValue("Select the number corresponding to the list you want to see.", 1, 2);
                     switch(listStudentByCategory) {
@@ -149,6 +155,7 @@ public class GetMenuOptions {
                     }
                     break;
                 case 5:
+                    System.out.println("\nYou have choosen to borrow a book!");
                     // Register borrowed book
                     System.out.println("StudentID: ");
                     String studentIdBorrow = scanner.nextLine();
@@ -183,6 +190,7 @@ public class GetMenuOptions {
                     }
                     break;   
                 case 6:
+                    System.out.println("\nYou have choosen to return a book!");
                     // Register return book ****
                     System.out.println("StudentID: ");
                     String studentIdReturned = scanner.nextLine();
@@ -203,15 +211,16 @@ public class GetMenuOptions {
                         List<Students> sortedStudentsID = sorting.mergeSortStudent(student, 2);
                         Students studentResult = search.binarySearchStudent(sortedStudentsID, resultId[0], 2);
                         if (studentResult!=null) {
-                            System.out.println(studentResult.toString());
+                            System.out.println(studentResult.toStringUnic());
                         }else{
-                            System.out.println("Sorry, we could not find this student on our data, please check if the student ID is correct.");
+                            System.out.println("\nSorry, we could not find this student on our data, please check if the student ID is correct.");
                         }
                     } else{
-                        System.out.println("There is no waiting list for this book.");
+                        System.out.println("\nThere is no waiting list for this book.");
                     }
                     break;   
                 case 7:
+                    System.out.println("\nYou have choosen to list all books borrowed by a student!");
                     // List all books borrowed book from student ID
                     System.out.println("StudentID: ");
                     String studentID = scanner.nextLine();
