@@ -12,6 +12,7 @@ import java.util.Scanner;
 /**
  *
  * @author matheusdiniz
+ * @author carloswilker
  */
 public class CCTLibrary {
 

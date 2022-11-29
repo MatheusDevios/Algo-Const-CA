@@ -10,6 +10,7 @@ import java.util.Scanner;
 /**
  *
  * @author matheusdiniz
+ * @author carloswilker
  */
 public class GetUserInput {
     
@@ -66,7 +67,7 @@ public class GetUserInput {
                 userInput = Integer.parseInt(myKB.nextLine());
                 //check that the value is allowed by checking range
                 if ( (userInput < minValue) || ( userInput > maxValue) ){
-                System.out.println("\nError -- the system didn't find what you typed!");
+                System.out.println("\nError -- You have choosen an invalid option, please try again.");
                 menu.getMenu();
                 }
                 else {

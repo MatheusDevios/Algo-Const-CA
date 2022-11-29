@@ -7,6 +7,7 @@ package Controller;
 /**
  *
  * @author matheusdiniz
+ * @author carloswilker
  */
 public class Authentication {
     

@@ -7,6 +7,7 @@ package Model;
 /**
  *
  * @author matheusdiniz
+ * @author carloswilker
  */
 public class Students {
     
@@ -55,6 +56,11 @@ public class Students {
         return "StudentID: " + studentID + ",\t Name: " + firstName + " " + lastName + ",\t email: " + email + ",\t gender: " + gender + ",\t adress: " + adress;
     }
     
+    /**
+     * 
+     * @return Unique to string that shows a unique data in a different style than the normal toString which is used 
+     * when searching the hole list.
+     */
     public String toStringUnic() {
         return "\nStudentID: " + studentID + "\nName: " + firstName + " " + lastName + "\nemail: " + email + "\ngender: " + gender + "\nadress: " + adress;
     }

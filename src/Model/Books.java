@@ -5,7 +5,7 @@
 package Model;
 
 /**
- *
+ * @author carloswilker
  * @author matheusdiniz
  */
 public class Books {

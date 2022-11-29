@@ -12,6 +12,7 @@ import java.util.List;
 /**
  *
  * @author matheusdiniz
+ * @author carloswilker
  */
 public class Reading {
     

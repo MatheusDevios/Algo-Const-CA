@@ -13,6 +13,7 @@ import java.util.ArrayList;
 /**
  *
  * @author matheusdiniz
+ * @author carloswilker
  */
 public class MyOwnQueue {
     

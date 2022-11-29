@@ -7,6 +7,7 @@ package Model;
 /**
  *
  * @author matheusdiniz
+ * @author carloswilker
  */
 public class Returns {
     

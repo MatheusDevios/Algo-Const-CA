@@ -23,6 +23,7 @@ import java.util.Scanner;
 /**
  *
  * @author matheusdiniz
+ * @author carloswilker
  */
 public class GetMenuOptions {
     
@@ -63,8 +64,8 @@ public class GetMenuOptions {
                                 System.out.println(resultBook2.toStringUnic());
                             } else {
                                 System.out.println("\nSorry, we do not have this Book.");
-                            }
-                            break;
+                            } 
+                           break;
                         case 2:
                             //search book by Author
                             List<Books> sortedBooks = sorting.mergeSortBook(books, 1);
@@ -207,10 +208,12 @@ public class GetMenuOptions {
                     String resultId[]= bookSearchedReturned.split(",");
                     System.out.println(bookSearchedReturned);
                     //splt in order to get the studentID
+                    
                     if (bookSearchedReturned.toLowerCase().contains(bookNameReturned.toLowerCase())){
                         List<Students> sortedStudentsID = sorting.mergeSortStudent(student, 2);
                         Students studentResult = search.binarySearchStudent(sortedStudentsID, resultId[0], 2);
                         if (studentResult!=null) {
+                            System.out.println("\nThe next student on the queue to borrow this book is: ");
                             System.out.println(studentResult.toStringUnic());
                         }else{
                             System.out.println("\nSorry, we could not find this student on our data, please check if the student ID is correct.");
