@@ -6,17 +6,13 @@ package Controller;
 
 import Model.Books;
 import Model.Borrows;
-import Model.Queue;
 import Model.Returns;
 import Model.Students;
 import View.GetUserInput;
 import View.Menu;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -49,6 +45,7 @@ public class GetMenuOptions {
             optionChosen = input.getUserMenu("Pick an option.", 1, 8);
              //in each case the user chooses an option, it does the respective one
             switch(optionChosen){
+                //search book by author or title
                 case 1:
                     System.out.println("\nYou have choosen to search a book!");
                     menu.getMenuBooksSearch();

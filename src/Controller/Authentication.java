@@ -11,8 +11,10 @@ package Controller;
  */
 public class Authentication {
     
-    String user_name = "cct";
-    String password = "LibraryCCT2022";
+    String user_name = "";
+    String login = "cct";
+    String password = "";
+    String passwordCheck = "LibraryCCT2022";
 
     public boolean login (String username, String password){
 
@@ -20,7 +22,7 @@ public class Authentication {
         this.password = password;
 
         //Checking the validation of the input
-        if(username.equals("cct") && password.equals("LibraryCCT2022")){
+        if(username.equals(login) && password.equals(passwordCheck)){
             //printing output
             System.out.println("\nAuthentication Successful.");
             return true;
